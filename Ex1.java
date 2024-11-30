@@ -20,6 +20,7 @@ public class Ex1 {
          */
         public static int number2Int(String num) {
             int ans = -1;
+            //kukuku
             // add your code here
 
             ////////////////////
