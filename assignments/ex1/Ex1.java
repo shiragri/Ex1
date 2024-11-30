@@ -20,7 +20,8 @@ public class Ex1 {
          */
         public static int number2Int(String num) {
             int ans = -1;
-            //kukuku
+
+
             // add your code here
 
             ////////////////////
@@ -33,12 +34,39 @@ public class Ex1 {
          */
         public static boolean isNumber(String a) {
             boolean ans = true;
-            // add your code here
+            String numLower = a.toLowerCase();
+            int baseint=10;
+            String numToCheck=numLower;
+            int len = a.length();
+            char charB = numLower.charAt(len-2);
+            if (charB == 'b') {
+                char base = numLower.charAt(len-1);
+                numToCheck = numLower.substring( 0, len-3);
+                baseint= baseToInt(base);
 
-            ////////////////////
+            }
+            try {
+                int val = Integer.parseInt(numToCheck, baseint);
+            }
+            catch (NumberFormatException e) {
+                ans = false;
+            }
             return ans;
         }
 
+    /**
+     * get char representing base for 0  to g
+     * @param c base as char
+     * @return int base as decimal
+     */
+    public static int baseToInt (char c) {
+            if (c>= '0' && c<= '9')
+                return c-'0';
+            else if (c >= 'a' && c<= 'g')
+                return c-'a'+10;
+            return -1;
+
+        }
         /**
          * Calculate the number representation (in basis base)
          * of the given natural number (represented as an integer).
