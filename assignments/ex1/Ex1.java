@@ -19,13 +19,28 @@ public class Ex1 {
          * @return
          */
         public static int number2Int(String num) {
-            int ans = -1;
+            int val = -1;
+
+            int baseint=10;
+            String numToCheck=num;
+            int len = numToCheck.length();
+            if (len>2){
+                char charB = num.charAt(len-2);
+                if (charB == 'b') {
+                    char base = num.charAt(len-1);
+                    numToCheck = num.substring( 0, len-2);
+                    baseint= baseToInt(base);
+    }
+            }
+            try {
+                val = Integer.parseInt(numToCheck, baseint);
+            }
+            catch (NumberFormatException e) {
+                val = -1;
+            }
 
 
-            // add your code here
-
-            ////////////////////
-            return ans;
+            return val;
         }
         /**
          * This static function checks if the given String (g) is in a valid "number" format.
@@ -34,16 +49,22 @@ public class Ex1 {
          */
         public static boolean isNumber(String a) {
             boolean ans = true;
-            String numLower = a.toLowerCase();
-            int baseint=10;
-            String numToCheck=numLower;
-            int len = a.length();
-            char charB = numLower.charAt(len-2);
-            if (charB == 'b') {
-                char base = numLower.charAt(len-1);
-                numToCheck = numLower.substring( 0, len-3);
-                baseint= baseToInt(base);
 
+            int baseint=10;
+            String numToCheck=a;
+            int len = numToCheck.length();
+            if (len >2){
+                char charB = a.charAt(len-2);
+                if (charB == 'b') {
+                    char base = a.charAt(len - 1);
+                    numToCheck = a.substring(0, len - 2);
+                    baseint = baseToInt(base);
+                }
+            }
+
+            String numToCheck1 = numToCheck.toUpperCase();
+            if (!numToCheck1.equals(numToCheck)) {
+                return false;
             }
             try {
                 int val = Integer.parseInt(numToCheck, baseint);
@@ -55,18 +76,33 @@ public class Ex1 {
         }
 
     /**
-     * get char representing base for 0  to g
+     * get char representing base for 2  to g
      * @param c base as char
      * @return int base as decimal
      */
     public static int baseToInt (char c) {
-            if (c>= '0' && c<= '9')
+            if (c>= '2' && c<= '9')
                 return c-'0';
-            else if (c >= 'a' && c<= 'g')
-                return c-'a'+10;
+            else if (c >= 'A' && c<= 'G')
+                return c-'A'+10;
             return -1;
 
         }
+
+    /**
+     * get char representing base for 2  to g
+     * @param i base as char
+     * @return int base as decimal
+     */
+    public static char intToBase (int i) {
+        if (i >= 2 && i <= 9)
+            return (char)(i+'0');
+        else if (i >= 10 && i <= 16)
+            return (char) (i+55);
+
+        return '-';
+
+    }
         /**
          * Calculate the number representation (in basis base)
          * of the given natural number (represented as an integer).
@@ -77,10 +113,17 @@ public class Ex1 {
          */
         public static String int2Number(int num, int base) {
             String ans = "";
-            // add your code here
+            ans= Integer.toString(num, base);
+            if(base==10) {
+                return ans;
+            }
+            else {
+                char baseChar = intToBase(base);
+                ans = ans + "b" + baseChar;
 
-            ////////////////////
-            return ans;
+
+                return ans;
+            }
         }
 
         /**
@@ -91,10 +134,11 @@ public class Ex1 {
          */
         public static boolean equals(String n1, String n2) {
             boolean ans = true;
-            // add your code here
+            int n1Int = number2Int(n1);
+            int n2Int = number2Int(n2);
+            return (n1Int == n2Int);
 
-            ////////////////////
-            return ans;
+
         }
 
         /**
@@ -106,10 +150,17 @@ public class Ex1 {
          *
          */
         public static int maxIndex(String[] arr) {
-            int ans = 0;
-            // add your code here
 
-            ////////////////////
-            return ans;
+            int max = Integer.MIN_VALUE;
+            int idx =-1;
+            for (int i = 0; i < arr.length; i++) {
+                int val =number2Int(arr[i]);
+                if (val>max) {
+                    max=val;
+                    idx = i;
+                }
+            }
+
+            return idx;
         }
 }

@@ -36,12 +36,38 @@ public class Ex1Test {
         }
         @Test
         void int2NumberTest() {
-           // implement this test
-        }
-        @Test
-        void maxIndexTest() {
-            // implement this test
+            int a = 11;
+            String s= Ex1.int2Number(a,2);
+            assertEquals(s,"1011b2");
+            a= 1024;
+            s= Ex1.int2Number(a,16);
+            assertEquals(s,"400bG");
+            a=256;
+            s= Ex1.int2Number(a,8);
+            assertEquals(s,"400b8");
+            a=654;
+            s= Ex1.int2Number(a,10);
+            assertEquals(s,"654");
+
+
         }
 
-        // Add additional test functions - test as much as you can.
+
+        @Test
+        void maxIndexTest() {
+            String[] arr= {"1DbG","AAbB","10010101b2","110110011000b2"};
+            int max=Ex1.maxIndex(arr);
+            assertEquals(max,3);
+            String[] arr1= {"1","0b2","1b2","0b2"};
+            max=Ex1.maxIndex(arr1);
+            assertEquals(max,0);
+            String[] arr2= {"12","10011b2","1FbG","E4bG"};
+            max=Ex1.maxIndex(arr2);
+            assertEquals(max,3);
+            String[] arr3= { "1","0","1","0"};
+            max=Ex1.maxIndex(arr3);
+            assertEquals(max,0);
+        }
+
+
     }
