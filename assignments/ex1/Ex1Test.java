@@ -67,7 +67,13 @@ public class Ex1Test {
             String[] arr3= { "1","0","1","0"};
             max=Ex1.maxIndex(arr3);
             assertEquals(max,0);
+            String[] arr4= {"1001b2","11b3","13","36"};
+            max=Ex1.maxIndex(arr4);
+            assertEquals(max,3);
         }
 
 
-    }
+
+
+
+}

@@ -16,7 +16,7 @@ public class Ex1 {
          * Convert the given number (num) to a decimal representation (as int).
          * It the given number is not in a valid format returns -1.
          * @param num a String representing a number in basis [2,16]
-         * @return
+         * @return the given number as Decimal
          */
         public static int number2Int(String num) {
             int val = -1;
@@ -78,7 +78,7 @@ public class Ex1 {
     /**
      * get char representing base for 2  to g
      * @param c base as char
-     * @return int base as decimal
+     * @return int the base as decimal
      */
     public static int baseToInt (char c) {
             if (c>= '2' && c<= '9')
@@ -92,7 +92,7 @@ public class Ex1 {
     /**
      * get char representing base for 2  to g
      * @param i base as char
-     * @return int base as decimal
+     * @return the char value of the given decimal
      */
     public static char intToBase (int i) {
         if (i >= 2 && i <= 9)
@@ -112,16 +112,13 @@ public class Ex1 {
          * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
          */
         public static String int2Number(int num, int base) {
-            String ans = "";
-            ans= Integer.toString(num, base);
+            String ans = Integer.toString(num, base);
             if(base==10) {
                 return ans;
             }
             else {
                 char baseChar = intToBase(base);
                 ans = ans + "b" + baseChar;
-
-
                 return ans;
             }
         }
@@ -137,8 +134,6 @@ public class Ex1 {
             int n1Int = number2Int(n1);
             int n2Int = number2Int(n2);
             return (n1Int == n2Int);
-
-
         }
 
         /**
@@ -160,7 +155,6 @@ public class Ex1 {
                     idx = i;
                 }
             }
-
             return idx;
         }
 }
