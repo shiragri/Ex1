@@ -24,8 +24,9 @@ public class Ex1Main {
                 if (!isNumber) {
                     continue;
                 }
-
             }
+            else break;
+
             System.out.println("Enter a string as number#2 (or \"quit\" to end the program): ");
             num2 = sc.next();
             if (!num2.equals("quit")) {
@@ -36,6 +37,8 @@ public class Ex1Main {
                     continue;
                 }
             }
+            else break;
+
             System.out.println("Enter a base for output: (a number [2,16]  ");
             String base = sc.next();
             int baseInt=-1;
@@ -51,7 +54,7 @@ public class Ex1Main {
                 continue;
             }
 
-            int sum= num2Int+num1Int;
+            int sum= num2Int + num1Int;
             int mul= num2Int*num1Int;
             String sumStr= Ex1.int2Number(sum,baseInt);
             String mulStr= Ex1.int2Number(mul,baseInt);
