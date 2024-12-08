@@ -52,6 +52,13 @@ public class Ex1Test {
 
         }
 
+        @Test
+        void number2Int() {
+            String s2 = "1011b2";
+            int v = Ex1.number2Int(s2);
+            assertEquals(v,11);
+        }
+
 
         @Test
         void maxIndexTest() {
