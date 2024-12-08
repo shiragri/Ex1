@@ -57,6 +57,15 @@ public class Ex1Test {
             String s2 = "1011b2";
             int v = Ex1.number2Int(s2);
             assertEquals(v,11);
+            s2 = "0b2";
+            v = Ex1.number2Int(s2);
+            assertEquals(v,0);
+            s2 = "50";
+            v = Ex1.number2Int(s2);
+            assertEquals(v,50);
+            s2 = "FbG";
+            v = Ex1.number2Int(s2);
+            assertEquals(v,15);
         }
 
 
