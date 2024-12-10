@@ -26,5 +26,16 @@ The following are NOT in the format:
 “b2”, “0b1”, “123b”, “1234b11”, “3b3”, “-3b5”, “3 b4”, “GbG”, “”.
 
 Example of a run:
+Enter a string as number#1 (or "quit" to end the program): 
+234bG
+num1=234bG is number:true, value:564
+Enter a string as number#2 (or "quit" to end the program): 
+1011b2
+num2=1011b2 is number:true, value:11
+Enter a base for output: (a number [2,16]  
+16
+234bG+1011b2=23fbG
+234bG*1011b2=183cbG
+Max number over [234bG,1011b2,23fbG,183cbG]is:183cbG
 
 
