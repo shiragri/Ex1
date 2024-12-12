@@ -1,5 +1,5 @@
 Abstract:
-This is my first assignment in GitHub at Introduction To Computing course at the Ariel University
+This is my first assignment in GitHub at Intro2CS course at the Ariel University
 The code is in Java
 Basicly the code act as calculator converting numbers from bases to base
 
