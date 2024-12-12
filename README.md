@@ -1,3 +1,9 @@
+Abstract:
+This is my first assignment in GitHub at Introduction To Computing course at the Ariel University
+The code is in Java
+Basicly the code act as calculator converting numbers from bases to base
+
+Details:
 Ex1
 This assignment focuses on the foundation of function programming and testing, it covers Strings, arrays, and numerical computations.
 In this assignment, we will design a number formatting converter and calculator.
